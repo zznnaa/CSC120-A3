@@ -4,9 +4,12 @@ Use this file to record your reflection on this assignment.
     Lucy
     Sophia
     Merry
+    Tillie
+    Reed
 
 - Which session(s) of TA / office hours did you attend?
     Sun 2/11 1-3pm
+    Mon 2/12 7-9pm
 
 - What are your initial impressions of Java?
 
