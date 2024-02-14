@@ -82,21 +82,21 @@ class Conversation {
                 boolean periodCheck = result.contains(". ");
                 boolean exclamCheck = result.contains("! ");
                 boolean questCheck = result.contains("? ");
-                if (periodCheck){
-                  int index_num = result.indexOf(".");
-                  char capital_char = Character.toUpperCase(result.charAt(index_num+2));
-                  result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
-                }
-                if (exclamCheck){
-                    int index_num = result.indexOf("! ");
-                    char capital_char = Character.toUpperCase(result.charAt(index_num+2));
-                    result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
-                    }
-                if (questCheck){
+                if (periodCheck) {
                     int index_num = result.indexOf(".");
-                    char capital_char = Character.toUpperCase(result.charAt(index_num+2));
-                    result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
-                    }
+                    char capital_char = Character.toUpperCase(result.charAt(index_num + 2));
+                    result = result.substring(0, index_num + 2) + capital_char + result.substring(index_num + 3);
+                }
+                if (exclamCheck) {
+                    int index_num = result.indexOf("! ");
+                    char capital_char = Character.toUpperCase(result.charAt(index_num + 2));
+                    result = result.substring(0, index_num + 2) + capital_char + result.substring(index_num + 3);
+                }
+                if (questCheck) {
+                    int index_num = result.indexOf(".");
+                    char capital_char = Character.toUpperCase(result.charAt(index_num + 2));
+                    result = result.substring(0, index_num + 2) + capital_char + result.substring(index_num + 3);
+                }
 
                 //print result
                 System.out.println(result);
