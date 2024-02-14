@@ -1,4 +1,3 @@
-import java.util.stream.IntStream;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -39,16 +38,17 @@ class Conversation {
             //put user response in the transcript
             tcount += 1;
             transcript_responses[tcount] = userInput;
+            userInput = userInput.toLowerCase();
 
             // if userInput does include mirror words repeat with a question
-            if (userInput.contains("I ") || userInput.contains("me ") || userInput.contains("am ") || userInput.contains("you ") || userInput.contains("my ") || userInput.contains("your ")) {
+            if (userInput.contains("i ") || userInput.contains("me ") || userInput.contains("am ") || userInput.contains("you ") || userInput.contains("my ") || userInput.contains("your ")) {
                 //break userInput into words
                 String[] words = userInput.split("\\s");
                 int words_length = words.length;
                 //iterate through each word
                 for (int i = 0; i < words.length; i++) {
-                    if (words[i].equals("I")) {
-                        words[i] = words[i].replace("I", "you");
+                    if (words[i].equals("i")) {
+                        words[i] = words[i].replace("i", "you");
                     } else if (words[i].equals("me")) {
                         words[i] = words[i].replace("me", "you");
                     } else if (words[i].equals("am")) {
@@ -80,17 +80,23 @@ class Conversation {
 
                 //capitalizes letters after punctuation
                 boolean periodCheck = result.contains(". ");
+                boolean exclamCheck = result.contains("! ");
+                boolean questCheck = result.contains("? ");
                 if (periodCheck){
                   int index_num = result.indexOf(".");
                   char capital_char = Character.toUpperCase(result.charAt(index_num+2));
                   result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
                 }
-                
-                // if (result.contains(". ")||result.contains("! ")||result.contains("? ")){
-                //   int index_num = result.indexOf(".");
-                //   char capital_char = Character.toUpperCase(result.charAt(index_num+2));
-                //   result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
-                // }
+                if (exclamCheck){
+                    int index_num = result.indexOf("! ");
+                    char capital_char = Character.toUpperCase(result.charAt(index_num+2));
+                    result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
+                    }
+                if (questCheck){
+                    int index_num = result.indexOf(".");
+                    char capital_char = Character.toUpperCase(result.charAt(index_num+2));
+                    result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
+                    }
 
                 //print result
                 System.out.println(result);
