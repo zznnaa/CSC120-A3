@@ -6,6 +6,7 @@ Use this file to record your reflection on this assignment.
     Merry
     Tillie
     Reed
+    Zoe Fingleton (not the same Zoe)
 
 - Which session(s) of TA / office hours did you attend?
     Sun 2/11 1-3pm

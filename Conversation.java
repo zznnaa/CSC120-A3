@@ -1,3 +1,4 @@
+import java.util.stream.IntStream;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -26,7 +27,6 @@ class Conversation {
             "That's crazy.",
             "HOT DOG"
         };
-        int canned_responses_length = canned_responses.length;
 
         //chatbot
         int counter = 0;
@@ -42,7 +42,7 @@ class Conversation {
 
             // if userInput does include mirror words repeat with a question
             if (userInput.contains("I ") || userInput.contains("me ") || userInput.contains("am ") || userInput.contains("you ") || userInput.contains("my ") || userInput.contains("your ")) {
-                // //break userInput into words
+                //break userInput into words
                 String[] words = userInput.split("\\s");
                 int words_length = words.length;
                 //iterate through each word
@@ -62,7 +62,6 @@ class Conversation {
                     } else if (words[i].equals("are")) {
                         words[i] = words[i].replace("are", "am");
                     }
-
                 }
 
                 //upper case first letter in sentence
@@ -78,6 +77,22 @@ class Conversation {
 
                 //put userInput back together
                 String result = String.join(" ", words);
+
+                //capitalizes letters after punctuation
+                boolean periodCheck = result.contains(". ");
+                if (periodCheck){
+                  int index_num = result.indexOf(".");
+                  char capital_char = Character.toUpperCase(result.charAt(index_num+2));
+                  result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
+                }
+                
+                // if (result.contains(". ")||result.contains("! ")||result.contains("? ")){
+                //   int index_num = result.indexOf(".");
+                //   char capital_char = Character.toUpperCase(result.charAt(index_num+2));
+                //   result = result.substring(0,index_num + 2) + capital_char + result.substring(index_num + 3);
+                // }
+
+                //print result
                 System.out.println(result);
                 tcount += 1;
                 transcript_responses[tcount] = result;
@@ -85,7 +100,7 @@ class Conversation {
                 //if userInput doesn't include any mirror words say random canned response: mmmhmmm, ok, yes, I see what you mean
             } else {
                 //chooses a random number between 0 and canned_response_length
-                int random_response_number = random.nextInt(canned_responses_length);
+                int random_response_number = random.nextInt(canned_responses.length);
                 //uses random number to print random response
                 String result = canned_responses[random_response_number];
                 System.out.println(result);
