@@ -34,8 +34,6 @@ class Conversation {
       tcount += 1;
       transcript_responses[tcount] = userInput;
       
-      //lowercase whole string? need to make upper and lower cases of words work .equalsIgnoreCase?
-      
       // if userInput does include mirror words repeat with a question
       if (userInput.contains("I ") || userInput.contains("me ") || userInput.contains("am ") || userInput.contains("you ") || userInput.contains("my ") || userInput.contains("your ")){
         // //break userInput into words
@@ -108,13 +106,6 @@ class Conversation {
       System.out.println(response);
     }
     System.out.println("See ya!");
-  
-  
-  
-  
-  
-  
-  
   }
 }
 
