@@ -42,7 +42,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 **YES** (Kudos!) Generates output with correct punctuation & capitalization
 
-_____ (Kudos!) Handles you --> me/I dilemma
+**NO** (Kudos!) Handles you --> me/I dilemma
 
 
 
